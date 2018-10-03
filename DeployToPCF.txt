@@ -1,0 +1,29 @@
+
+cf login -a api.run.pcfone.io --sso
+
+select space "s1p-demo"
+
+cf services
+
+cf marketplace
+
+cf create-service p-redis shared-vm redis-service
+
+cf create-user-provided-service sql-server-config-user-provided-service -p '{"uid":"ajaganathan","pw":"Passw0rd","uri":"sqlserver://ajaganathansqlserver.database.windows.net:1433;databaseName=AdventureWorks"}'
+
+cf services
+
+cf apps
+
+cf push aspnet-web -b hwc_buildpack -s windows2016 --no-start
+
+cf apps
+
+cf app aspnet-web
+
+cf bind-service aspnet-web redis-service
+
+cf bind-service aspnet-web sql-server-config-user-provided-service
+
+cf restart aspnet-web
+
