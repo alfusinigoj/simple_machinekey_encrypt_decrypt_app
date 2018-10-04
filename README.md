@@ -3,9 +3,9 @@
 ##### Where will you need it?
 - In case if connection strings are stored in ENV variable and it should not be human readable, most likely a temperory solution until a right solution like config-sever in place
 ##### Steps to perform
-- Clone or download this application code for git `https://github.com/alfusinigoj/simple_machinekey_encrypt_decrypt_app`
+- Clone or download this application code for git [https://github.com/alfusinigoj/simple_machinekey_encrypt_decrypt_app]
 - Open the solution in VS 2017 and compile
-- Goto `https://www.developerfusion.com/tools/generatemachinekey/` and generate a machine key
+- Goto [https://www.developerfusion.com/tools/generatemachinekey] and generate a machine key
 - Paste it under the `system.web` section of `web.config`, of the encryption tool app and the __app that you are going to use__ this encrypted value (section will look like below)
     ```
      <machineKey validationKey="B2FFA07BEA941CBFD2F2450A5BE4D8F6ABFFE624F3DBB35BC589D34C5647F65235634AEC71B5C1E2453BE8D466B6818A9438AC2FFE0C09024052FFF27C85EB3C" 
