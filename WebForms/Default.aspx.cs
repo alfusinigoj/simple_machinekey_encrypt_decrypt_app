@@ -10,18 +10,20 @@ namespace WebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+                lblErr.Text = string.Empty;
         }
 
         protected void btnEncrypt_Click(object sender, EventArgs e)
         {
             try
             {
-                lblResult.Text = string.Empty;
-                lblResult.Text = Convert.ToBase64String(MachineKey.Protect(Encoding.UTF8.GetBytes(txtValue.Text.Trim()), txtPurpose.Text.Trim()));
+                txtResult.Text = string.Empty;
+                txtResult.Text = Convert.ToBase64String(MachineKey.Protect(Encoding.UTF8.GetBytes(txtValue.Text.Trim()), txtPurpose.Text.Trim()));
             }
             catch (Exception ex)
             {
-                lblResult.Text = ex.Message;
+                lblErr.Text = ex.Message;
             }
         }
 
@@ -29,12 +31,12 @@ namespace WebForms
         {
             try
             {
-                lblResult.Text = string.Empty;
-                lblResult.Text = Encoding.UTF8.GetString(MachineKey.Unprotect(Convert.FromBase64String(txtValue.Text.Trim()), txtPurpose.Text.Trim()));
+                txtResult.Text = string.Empty;
+                txtResult.Text = Encoding.UTF8.GetString(MachineKey.Unprotect(Convert.FromBase64String(txtValue.Text.Trim()), txtPurpose.Text.Trim()));
             }
             catch (Exception ex)
             {
-                lblResult.Text = ex.Message;
+                lblErr.Text = ex.Message;
             }
         }
     }
