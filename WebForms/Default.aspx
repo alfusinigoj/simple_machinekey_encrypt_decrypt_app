@@ -3,8 +3,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
         <p>
-            Encrypt/Decrypt a string
+            Encrypt/Decrypt a string using machinekey<br />
+            <span style="color:red; font-size:smaller; font-style:italic">Note: Make sure the machine key section in this tool, is already updated by the desired one</span>
         </p>
+       
         <p>
             Value:&nbsp;&nbsp;&nbsp; &nbsp;
             <asp:TextBox ID="txtValue" runat="server" Width="913px"></asp:TextBox>
