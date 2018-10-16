@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
